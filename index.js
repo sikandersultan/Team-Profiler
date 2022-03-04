@@ -133,7 +133,7 @@ function theBigFunction () {
     function siteConstructor () {
         console.log("Team created!")
     
-        fs.writeFileSync(outputPath, newHtml(teamArray), "UTF-8")
+        fs.writeFileSync(outputPath, newHtml(bigArray), "UTF-8")
     
     }
     chooseTeam()
