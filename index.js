@@ -1,6 +1,6 @@
-const Manager = require("./lib/Manager.js")
-const Engineer = require("./lib/Engineer.js")
-const Intern = require("./lib/Intern.js")
+const Manager = require("./library/manager.js")
+const Engineer = require("./library/engineer.js")
+const Intern = require("./library/intern.js")
 const inquirer = require("inquirer")
 const fs = require("fs")
 const path = require("path")
@@ -65,7 +65,7 @@ function theBigFunction () {
             }
         ]) 
         .then (answers => {
-            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, managerOffice)
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice)
             bigArray.push(manager)
             chooseTeam()
         })
@@ -130,4 +130,12 @@ function theBigFunction () {
             chooseTeam()
         })
     }
+    function siteConstructor () {
+        console.log("Team created!")
+    
+        fs.writeFileSync(outputPath, newHtml(teamArray), "UTF-8")
+    
+    }
+    chooseTeam()
 }
+theBigFunction()
