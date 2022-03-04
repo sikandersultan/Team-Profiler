@@ -1,3 +1,4 @@
+
 const Manager = require("./library/manager.js")
 const Engineer = require("./library/engineer.js")
 const Intern = require("./library/intern.js")
@@ -133,7 +134,7 @@ function theBigFunction () {
     function siteConstructor () {
         console.log("Team created!")
     
-        fs.writeFileSync(outputPath, newHtml(bigArray), "UTF-8")
+        fs.writeFileSync(outputPath, newHtml(bigArray),)
     
     }
     chooseTeam()
