@@ -8,6 +8,8 @@ const newHtml = require("./src/template.js")
 const { choices } = require("yargs")
 
 
+bigArray = []
+
 
 function theBigFunction () {
     function chooseTeam () {
@@ -62,7 +64,38 @@ function theBigFunction () {
         ]) 
         .then (answers => {
             const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, managerOffice)
-            
+            bigArray.push(manager)
+            chooseTeam()
+        })
+    }
+
+    function newEngineer () {
+        inquirer.prompt([
+            {
+                type: "input",
+                name: "engineerName",
+                message: "Please enter the engineer's name"
+            },
+            {
+                type: "input",
+                name: "engineerId",
+                message: "Please enter the engineer's ID number"
+            },
+            {
+                type: "input",
+                name: "engineerEmail",
+                message: "Please enter the engineer's email address"
+            },
+            {
+                type: "input",
+                name: "engineerGH",
+                message: "Please enter the engineer's GitHub username"
+            }
+        ])
+        .then (answers => {
+            const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGH)
+            bigArray.push(engineer)
+            chooseTeam()
         })
     }
 }
