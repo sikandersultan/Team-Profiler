@@ -1,4 +1,4 @@
-
+// some require thingys, for npm i. It works off of package but yeah
 const Manager = require("./library/manager.js")
 const Engineer = require("./library/engineer.js")
 const Intern = require("./library/intern.js")
@@ -9,10 +9,13 @@ const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "index.html")
 const newHtml = require("./src/template.js")
 
+// the big array stores all the data the user enters and makes it into a usable format for template.js and the library folder to use
 bigArray = []
 
 
+// the big function starts the entire application basically
 function theBigFunction () {
+    // the chooseTeam function repeats itself as many times as the user pleases. It checks for the input between Manager, Engineer and Intern and chooses what questions to ask.
     function chooseTeam () {
         inquirer.prompt([
             {
@@ -129,6 +132,7 @@ function theBigFunction () {
             chooseTeam()
         })
     }
+    // this functions runs once the user selects that he does not want to enter any more employees. 
     function siteConstructor () {
         console.log("Team created!")
     

@@ -1,5 +1,6 @@
 const generateTeam = team => {
-
+    
+    // the html code to generate the html card for the manager
     const generateManager = manager => {
         return `
 <div class="card employee-card">
@@ -17,7 +18,7 @@ const generateTeam = team => {
 </div>
         `;
     };
-
+    // the html code to generate the html card for the engineer
     const generateEngineer = engineer => {
         return `
 <div class="card employee-card">
@@ -35,7 +36,7 @@ const generateTeam = team => {
 </div>
         `;
     };
-
+    // the html code to generate the html card for the intern
     const generateIntern = intern => {
         return `
 <div class="card employee-card">
@@ -76,7 +77,7 @@ const generateTeam = team => {
 }
 
 module.exports = team => {
-
+    // the main part of the html code. This is the top  part of the html file including bootstrap credintials and the function to start the team builder function on the top.
     return `
 <!DOCTYPE html>
 <html lang="en">
